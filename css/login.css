@@ -9,7 +9,7 @@ body {
   background-color: #ebad00;
   /* background-size: cover;*/
   background-position: center;
-  background: url(Gambar/bgrn.png);
+  background: url(../Gambar/bgrn.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -86,4 +86,5 @@ img {
   color: red;
   font-size: 14px;
   margin-top: 5px;
+  margin-left: 25px;
 }

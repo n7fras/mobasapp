@@ -1,0 +1,572 @@
+* {
+  margin: 0px;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+body {
+  background-color: #cdcdcd;
+}
+#main-content {
+  width: 80%;
+  margin-left: 250px;
+  margin-right: 25px;
+  margin-top: 50px;
+  background-color: #cdcdcd;
+}
+
+/* .container {
+    display: flex;
+    min-height: 100vh;
+    min-width: auto;
+  } */
+div .login a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #cdcdcd;
+  border-width: medium;
+  background-color: white;
+  margin-top: 2px;
+}
+#login {
+  text-align: center;
+}
+a.login {
+  text-decoration: none;
+}
+.sidebar.hide .login {
+  display: none;
+}
+
+.bi-bell {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.notifikasi {
+  background-color: #00a373;
+  padding: 8px;
+  width: 100%;
+  height: 25px; /* Adjusted height for better visibility */
+  position: fixed; /* Menjadikan notifikasi tetap di tempat saat di-scroll */
+  top: 0; /* Memastikan notifikasi berada di bagian atas halaman */
+  left: 0; /* Memastikan notifikasi dimulai dari paling kiri halaman */
+  /* z-index: 1000; Menempatkan notifikasi di atas elemen lain */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #00a373;
+  color: #ecf0f1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: width 0.3s ease-out;
+  overflow-y: auto;
+  scrollbar-width: none;
+  scrollbar-color: #a9a9a9 transparent;
+}
+
+.sidebar.hide {
+  width: 90px;
+  transition: width 0.3s ease-out;
+}
+.sidebar.hide div#box1.box {
+  margin-left: 25px;
+}
+
+.sidebar a {
+  color: white;
+}
+
+.sidebar.hide .description {
+  display: none;
+}
+
+.sidebar.hide .dropdown-symbol1 {
+  display: none;
+}
+
+.sidebar.hide .dropdown-symbol2 {
+  display: none;
+}
+
+.gambar {
+  width: 100px;
+  height: auto;
+  margin-left: 60px;
+  border-radius: 50%;
+  border: 10px solid #ebad00;
+  display: block;
+  background-image: transparent;
+  margin-top: 25px;
+  position: static;
+  overflow-y: hidden;
+}
+
+.sidebar.hide .gambar {
+  display: none;
+  margin-left: 10px;
+}
+.sidebar.hide .admin {
+  width: 50px;
+}
+
+.icon:hover {
+  color: #ebad00;
+}
+
+.listitem a {
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  padding: 0px;
+  line-height: 50px;
+  margin-top: 15px;
+  text-decoration: none;
+  margin-bottom: 0px;
+}
+
+.dropdown-item {
+  font-size: small;
+}
+
+.description {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 0px;
+  color: black;
+}
+
+.icon {
+  margin-right: 10px;
+  width: 25px;
+  padding-left: 30px;
+  padding-top: 25px;
+}
+
+.dropdown-symbol1 {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  display: inline-block;
+  margin-left: 70px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.dropdown-symbol2 {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  display: inline-block;
+  margin-left: 87px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.dropdown {
+  display: none;
+  text-align: center;
+}
+
+.dropdown.active {
+  display: block;
+}
+
+#dropdown-2 {
+  display: none;
+}
+
+#dropdown-2.active {
+  display: block;
+}
+
+div #item:hover {
+  color: #ebad00;
+}
+
+#menu-button {
+  width: 32px;
+  position: absolute;
+  /* overflow: hidden; */
+  /* z-index: 999; */
+  left: 220px;
+  margin-top: 10px;
+  transition: left 0.3 ease !important;
+}
+
+.sidebar.hide #menu-button {
+  left: 60px;
+  margin-top: 1px;
+}
+.sidebar.hide #menu-label:after {
+  display: none;
+}
+.sidebar.hide #menu-label:before {
+  display: none;
+}
+
+#menu-label {
+  position: relative;
+  display: block;
+  height: 20px;
+  cursor: pointer;
+}
+
+#menu-checkbox {
+  display: none;
+}
+
+#menu-checkbox:checked + #menu-label {
+  position: relative;
+  display: block;
+}
+
+#Humburger,
+#menu-label:after,
+#menu-label:before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  transition: 0.5s;
+}
+
+#menu-label:after,
+#menu-label:before {
+  content: "";
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#menu-label:before {
+  top: 0;
+}
+
+#menu-label:after {
+  top: 8px;
+}
+
+#Humburger {
+  top: 16px;
+}
+
+#Humburger:before {
+  content: "Menu";
+  position: absolute;
+  top: 5px;
+  right: 0;
+  left: 0;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#menu-checkbox:checked + #menu-label::before {
+  left: -39px;
+}
+
+#menu-checkbox:checked + #menu-label::after {
+  left: 39px;
+}
+
+#menu-checkbox:checked + #menu-label #Humburger::before {
+  animation: moveUpthenDown 0.8s ease 0.2s forwards,
+    shakeUp 0.8s ease 0.2s forwards, shakeDown 0.8s ease 0.2s forwards;
+}
+
+@keyframes moveUpthenDown {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -27px;
+  }
+  100% {
+    top: -14px;
+  }
+}
+
+@keyframes shakeUp {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(0);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes shakeDown {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  80% {
+    transform: rotateZ(3deg);
+  }
+  90% {
+    transform: rotateZ(-3deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.table-container {
+  flex-grow: 1;
+  padding: 0;
+  border-radius: 8px;
+  width: auto;
+  position: relative;
+  /* margin: 0 auto; */
+  /* margin-left: 30px; */
+}
+h1 {
+  margin-left: 10px;
+}
+button#Button_Cari {
+  margin-left: 5;
+}
+div#search {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
+  
+}
+.text-cari{
+  font-size: larger;
+
+  
+}
+.Button_Cari{
+  font-size: larger;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  margin-top: 45px;
+  text-align: left;
+  border-bottom: 1px solid #cdcdcd;
+  border-top: 1px solid #cdcdcd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  padding: 8px;
+}
+td {
+  padding: 7px;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Mengatur lebar kolom */
+
+.box {
+  border: 1px solid black;
+
+  /* margin: auto; */
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+/* Aturan untuk mengubah margin boxkry saat sidebar diperkecil */
+
+
+.sidebar.hide {
+  width: 100px; /* Lebar sidebar saat disembunyikan */
+  transition: width 0.3s; /* Animasi perubahan lebar sidebar */
+}
+
+.sidebar {
+  width: 250px; /* Lebar sidebar normal */
+  transition: width 0.3s; /* Animasi perubahan lebar sidebar */
+}
+
+.boxkry {
+ 
+  /* Atur elemen dalam kolom */
+  padding: 20px;
+  background-color: #ffffff;
+  /*   */
+  border: 1px solid;
+  margin-left: 60px;
+  margin-top: 80px;
+  border-radius: 5px;
+  margin-right: 50px;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Tempatkan elemen di sebelah kanan */
+  margin-bottom: 20px;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+img.gmbr{
+  width: 80px;
+}
+h3{
+  display: flex;
+  justify-content: center;
+}
+.login{
+  display: flex;
+  justify-content: center
+}
+
+.img{
+  width: 80%;
+  margin-left: 120px;
+  margin-top: 10px;
+}
+.boxplus{
+  border: 1px solid black;
+  text-align: left;
+  /* margin: auto; */
+  margin-top: 80px;
+  margin-left: 30px;
+  margin-right: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.input
+{
+  text-align: left;
+  font-size: larger;
+  width: 70%;
+  height: 40px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  counter-reset: #00a373;
+  font-size: large;
+}
+#Jabatan{
+  font-size: large;
+}
+.input#NIK {
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  /* height: auto; */
+  background-color: #cdcdcd;
+  }
+  .button {
+    background-color: #00a373;
+    border-radius: 20px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 130px;
+    height: 50px;
+    float: right;
+    margin-right: 0px;
+    margin-left: 10px;
+  }
+  .button:hover {
+    background-color: #5dd2b0;
+  }
+
+  
+
+
+  .listitem :hover{
+    color: #ebad00;
+  }
+
+
+
+.input#kode_brg{
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  /* height: auto; */
+  background-color: #cdcdcd;
+}
+
+.label-cell{
+  width: 150px;
+}
+
+
+.edit{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-edit{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-edit a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.edit:hover .dropdown-edit{
+  display: block;
+}
+#status{
+  width: 120px;
+  font-size: larger;
+  text-align: center;
+}
+input#pw {
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  /* height: auto; */
+  background-color: #cdcdcd;
+  }
